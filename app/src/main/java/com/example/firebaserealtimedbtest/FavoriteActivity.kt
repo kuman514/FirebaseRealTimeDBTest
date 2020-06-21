@@ -14,9 +14,28 @@ class FavoriteActivity : AppCompatActivity() {
 
         // 좋아요 버튼
         val like = findViewById<ImageButton>(R.id.buttonLike)
+        var fav = intent.extras!!["like"]
+
         like.setOnClickListener {
-            // 여기에 좋아요를 누르면 "I like this place!" 라는 문구와 함께 좋아요 화면을 나간다.
-            Toast.makeText(this, "I like this place!", Toast.LENGTH_SHORT)
+            val txt: String = when(fav) {
+                true -> "I no longer like this place."
+                false -> "I like this place!"
+                else -> ""
+            }
+
+            fav = when(fav) {
+                true -> false
+                false -> true
+                else -> false
+            }
+
+            intent.putExtra("like", fav as Boolean)
+
+            // 좋아요를 누르면 "I like this place!" 라는 문구와 함께 좋아요 화면을 나간다.
+            val msg = Toast.makeText(this, txt, Toast.LENGTH_SHORT)
+            msg.show()
+
+            setResult(RESULT_OK, intent);
             finish()
         }
 
