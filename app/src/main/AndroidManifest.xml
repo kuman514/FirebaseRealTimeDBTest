@@ -20,6 +20,7 @@
         <activity android:name=".FavoriteActivity"/>
         <activity android:name=".DetailIconActivity"/>
         <activity android:name=".DetailActivity"/>
+        <activity android:name=".APITestActivity"/>
 
     </application>
 

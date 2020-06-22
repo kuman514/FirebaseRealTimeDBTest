@@ -22,11 +22,22 @@
         android:id="@+id/gotoDetailScreen"
         android:layout_width="160dp"
         android:layout_height="152dp"
-        android:layout_marginTop="141dp"
-        android:layout_marginBottom="195dp"
+        android:layout_marginBottom="76dp"
         android:text="detail"
+        app:layout_constraintBottom_toTopOf="@+id/gotoAPITestScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/gotoAPITestScreen"
+        android:layout_width="160dp"
+        android:layout_height="152dp"
+        android:layout_marginBottom="72dp"
+        android:text="API TEST"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gotoFavScreen" />
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

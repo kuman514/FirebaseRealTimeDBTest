@@ -35,7 +35,7 @@ class FavoriteActivity : AppCompatActivity() {
             val msg = Toast.makeText(this, txt, Toast.LENGTH_SHORT)
             msg.show()
 
-            setResult(RESULT_OK, intent);
+            setResult(RESULT_OK, intent)
             finish()
         }
 

@@ -37,6 +37,14 @@ class MainActivity : AppCompatActivity() {
             //startActivityForResult(intent, PICK_DETAIL_INTENT)
             startActivity(intent)
         }
+
+        // API 테스트하기
+        val apiTest = findViewById<Button>(R.id.gotoAPITestScreen)
+        apiTest.setOnClickListener {
+            val intent = Intent(this, DetailIconActivity::class.java)
+            //startActivityForResult(intent, PICK_DETAIL_INTENT)
+            startActivity(intent)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
