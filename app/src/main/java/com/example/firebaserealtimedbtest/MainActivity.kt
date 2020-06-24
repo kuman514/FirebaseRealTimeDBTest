@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         // API 테스트하기
         val apiTest = findViewById<Button>(R.id.gotoAPITestScreen)
         apiTest.setOnClickListener {
-            val intent = Intent(this, DetailIconActivity::class.java)
+            val intent = Intent(this, APITestActivity::class.java)
             //startActivityForResult(intent, PICK_DETAIL_INTENT)
             startActivity(intent)
         }
