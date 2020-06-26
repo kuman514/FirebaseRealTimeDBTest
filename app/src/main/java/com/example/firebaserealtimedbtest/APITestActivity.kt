@@ -14,15 +14,10 @@ class APITestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_api_test)
 
-        val result = findViewById<TextView>(R.id.testResult)
+        sendButton.setOnClickListener {
+            // 메시지를 보내고
 
-        val Urlstr = "http://api.visitkorea.or.kr/openapi/service/rest/EngService/searchStay?serviceKey="
-        val key = ""
-        val parm = "&numOfRows=10&pageSize=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&listYN=Y&arrange=A&hanOk=1&_type=json"
-
-        val stream = URL(Urlstr + key + parm).openStream()
-        val read = BufferedReader(InputStreamReader(stream, "UTF-8"))
-
-        result.text = read.read().toString()
+            // 인텐트를 받아오기
+        }
     }
 }
