@@ -1,12 +1,14 @@
 package com.example.firebaserealtimedbtest
 
 import android.content.Context
+import android.util.Log
 import com.google.api.gax.core.FixedCredentialsProvider
 import com.google.auth.oauth2.GoogleCredentials
 import com.google.auth.oauth2.ServiceAccountCredentials
 import com.google.cloud.dialogflow.v2.*
 import com.google.protobuf.Struct
 import com.google.protobuf.Value
+import kotlinx.android.synthetic.main.activity_api_test.*
 
 
 object DialogflowManager {
@@ -14,7 +16,7 @@ object DialogflowManager {
     private var session: SessionName? = null
     private const val LANGUAGE_CODE = "en-US"
 
-    fun initAssistant(context: Context) {
+    fun initAssistant(context: Context, sessionText: String) {
         try {
             val stream = context.resources.openRawResource(R.raw.seouler2020c6a67b80037a)
             val credentials = GoogleCredentials.fromStream(stream)
@@ -23,8 +25,11 @@ object DialogflowManager {
             val settingsBuilder = SessionsSettings.newBuilder()
             val sessionsSettings = settingsBuilder.setCredentialsProvider(FixedCredentialsProvider.create(credentials)).build()
 
+            Log.d("Dialogflow", settingsBuilder.toString())
+            Log.d("Dialogflow", sessionsSettings.toString())
+
             this.client = SessionsClient.create(sessionsSettings)
-            this.session = SessionName.of(projectId, aUniqueIdentifier)
+            this.session = SessionName.of(projectId, sessionText)
         } catch (e: Exception) {
             e.printStackTrace()
         }

@@ -16,9 +16,13 @@ class APITestActivity : AppCompatActivity() {
 
         sendButton.setOnClickListener {
             // 메시지를 보내고
-            val messageToSend = testText.text
+            DialogflowManager.initAssistant(this, testText.text.toString())
 
             // 인텐트를 받아오기
+            val result = DialogflowManager.detectIntentText(123, testText.text.toString())
+            testResult.text = result.toString()
+
+            // 받아온 인텐트를 파싱
         }
     }
 }

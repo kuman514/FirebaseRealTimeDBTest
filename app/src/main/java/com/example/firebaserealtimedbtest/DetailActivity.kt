@@ -14,7 +14,6 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_details)
 
         val detailName = findViewById<TextView>(R.id.detailName)
-        DialogflowManager.initAssistant(this)
         
         // 불러온 상위 인텐트에서 스트링을 받아와 텍스트 설정하기
         detailName.text = intent.extras!!["itemName"].toString()
