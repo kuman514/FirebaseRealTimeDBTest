@@ -1,11 +1,15 @@
 package com.example.firebaserealtimedbtest
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_api_test.*
+import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import java.lang.Exception
 import java.net.URL
 
 class APITestActivity : AppCompatActivity() {
@@ -20,9 +24,9 @@ class APITestActivity : AppCompatActivity() {
 
             // 인텐트를 받아오기
             val result = DialogflowManager.detectIntentText(123, testText.text.toString())
-            testResult.text = result.toString()
-
-            // 받아온 인텐트를 파싱
+            val ft: String = result.fulfillmentText
+            val dn: String = result.intent.displayName
+            testResult.text = "Message: $ft\nDisplayName: $dn"
         }
     }
 }
