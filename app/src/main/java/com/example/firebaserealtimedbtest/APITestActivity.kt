@@ -16,6 +16,8 @@ class APITestActivity : AppCompatActivity() {
 
         sendButton.setOnClickListener {
             // 메시지를 보내고
+            val messageToSend = testText.text
+
 
             // 인텐트를 받아오기
         }
